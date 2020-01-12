@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">FuelApp</string>
+    <string name="app_name">fuelio.</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

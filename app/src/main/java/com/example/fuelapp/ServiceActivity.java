@@ -4,41 +4,31 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
-public class RegisterActivity extends AppCompatActivity {
-    private String CODE = "2634";
+public class ServiceActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        Button login = (Button) findViewById(R.id.authorization);
+        setContentView(R.layout.activity_service);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getNotification();
-        login.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v)
-            {
-                if (((EditText) findViewById(R.id.etPassword)).getText().toString().equals(CODE)) {
-                    Intent intent = new Intent(RegisterActivity.this, CreditCardActivity.class);
-                    startActivity(intent);
-                    return;
-                }
-                Toast.makeText(RegisterActivity.this, "Неверный код авторизации", Toast.LENGTH_LONG).show();
-            }
-        });
     }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        finish();
+        return true;
+    }
+
 
 
     private void getNotification() {
@@ -69,8 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("Код регистрации")
-                        .setContentText(CODE)
+                        .setContentTitle("Сбербанк")
+                        .setContentText("VISA Покупка 1500р fuelio. Баланс: 435856.22р")
                         .setOngoing(true)
                         .setChannelId(id)
                         .setAutoCancel(true);
@@ -81,5 +71,4 @@ public class RegisterActivity extends AppCompatActivity {
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(1, notification);
     }
-
 }

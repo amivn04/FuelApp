@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    tools:context=".ServiceActivity">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="212dp"
+        android:layout_height="283dp"
+        android:layout_gravity="center"
+        android:src="@drawable/flamenew" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="fuelio."
+        android:textAlignment="center"
+        android:textColor="#E16854"
+        android:textSize="72sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="35sp"
+        android:textAlignment="center"
+        android:layout_margin="20px"
+        android:text="Ожидание заправки"/>
+
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@android:color/white"
+    android:textSize="20sp"
+    android:textAlignment="center"
+    android:layout_margin="20px"
+    android:text="Сообщите заправщику количество литров или сумму"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:textAlignment="center"
+        android:layout_margin="20px"
+        android:text="Сумма будет списана с Вашей банковской карты"/>
+
+
+
+
+</LinearLayout>
